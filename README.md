@@ -84,3 +84,13 @@ LEADS_FILE_PATH=./data/leads.json
 - Add analytics if needed.
 - Check desktop, tablet, and mobile layouts.
 - Verify SSL, sitemap, robots, Open Graph preview, and schema markup.
+
+## Cloudflare Deployment
+
+Production deployments are handled by Cloudflare Workers Builds. Every push to
+the `main` branch runs `npm run build` and `npx wrangler deploy`. The static site
+is served from `public/`, while the contact endpoint runs in `worker/index.js`
+and stores submissions in the `marvinsolis-leads` D1 database.
+
+The legacy Express server remains available for local or Hostinger rollback
+until the DNS cutover to Cloudflare is complete.
