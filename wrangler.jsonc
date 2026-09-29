@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "marvinsolis-website",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-29",
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "not_found_handling": "single-page-application"
+  },
+  "d1_databases": [
+    {
+      "binding": "LEADS",
+      "database_name": "marvinsolis-leads",
+      "database_id": "8c833a53-bf56-4ea5-a1bd-2f730dd88a50"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
